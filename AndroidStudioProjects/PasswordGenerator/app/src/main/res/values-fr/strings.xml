@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Password Generator</string>
+    <string name="app_name_full">Password Generator</string>
+    <string name="lbl_what_kind_of_password">CHOISIR LES OPTIONS DU MOT DE PASSE A GENERER</string>
+    <string name="lbl_alphabetic_letters">Avec des lettres</string>
+    <string name="lbl_lowercase_only">Minuscule uniquement</string>
+    <string name="lbl_uppercase_only">Majuscule uniquement</string>
+    <string name="lbl_lowercase_uppercase">Les deux</string>
+    <string name="lbl_numeric_characters">Avec des chiffres</string>
+    <string name="lbl_symbolic_characters">Avec Caractères spéciaux</string>
+    <string name="lbl_generate">Générer</string>
+    <string name="lbl_password_length">Longueur du mot de passe</string>
+    <string name="dlg_error_check_one">Veuillez sélectionner au moins une option s\'il vous plaît</string>
+    <string name="dlg_password_copied">Le mot de passe a été copié avec succès !</string>
+</resources>
