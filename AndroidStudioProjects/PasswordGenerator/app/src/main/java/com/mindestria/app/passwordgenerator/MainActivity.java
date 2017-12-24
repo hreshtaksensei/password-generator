@@ -70,25 +70,25 @@ public class MainActivity extends AppCompatActivity {
                     String alphabeticUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                     String numericNumbers = "0123456789";
                     String symbolicCharacters = "@#$&€éèàç=+£!?";
-                    StringBuilder passwordRange = new StringBuilder();
+                    StringBuilder passwordCharactersList = new StringBuilder();
                     // Random objects
-                    SecureRandom rnd = new SecureRandom();
-                    StringBuilder sb = new StringBuilder(10);
-                    // Baking password range
+                    SecureRandom randomNumber = new SecureRandom();
+                    StringBuilder passwordGenerated = new StringBuilder(10);
+                    // Baking password character list using enable options
                     if(alphabeticSwitch.isChecked() && alphabeticRadioGroup.getCheckedRadioButtonId() == R.id.rad_lowerCase)
-                        passwordRange.append(alphabeticLowerCase);
+                        passwordCharactersList.append(alphabeticLowerCase);
                     if(alphabeticSwitch.isChecked() && alphabeticRadioGroup.getCheckedRadioButtonId() == R.id.rad_upperCase)
-                        passwordRange.append(alphabeticUpperCase);
+                        passwordCharactersList.append(alphabeticUpperCase);
                     if(alphabeticSwitch.isChecked() && alphabeticRadioGroup.getCheckedRadioButtonId() == R.id.rad_lowerUpperCase)
-                        passwordRange.append(alphabeticLowerCase+alphabeticUpperCase);
-                    if(numericSwitch.isChecked()) passwordRange.append(numericNumbers);
-                    if(symbolicSwitch.isChecked()) passwordRange.append(symbolicCharacters);
+                        passwordCharactersList.append(alphabeticLowerCase+alphabeticUpperCase);
+                    if(numericSwitch.isChecked()) passwordCharactersList.append(numericNumbers);
+                    if(symbolicSwitch.isChecked()) passwordCharactersList.append(symbolicCharacters);
                     // Generating random password
                     for(int i=0;i<passwordLengthSeekBar.getProgress();i++) {
-                        sb.append(passwordRange.toString().charAt(rnd.nextInt(passwordRange.length())));
+                        passwordGenerated.append(passwordCharactersList.toString().charAt(randomNumber.nextInt(passwordCharactersList.length())));
                     }
                     // Display password
-                    passwordScreen.setText(sb.toString());
+                    passwordScreen.setText(passwordGenerated.toString());
                 } else {
                     Toast.makeText(MainActivity.this, R.string.dlg_error_check_one, Toast.LENGTH_SHORT).show();
                 }
