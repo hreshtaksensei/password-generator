@@ -34,7 +34,8 @@ public class Password_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_password);
         // Change Title name of the activity
         getSupportActionBar().setTitle(R.string.app_name_full);
-        getSupportActionBar().setLogo(R.mipmap.icon);
+        // Enable back home button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Getting objects from view
         alphabeticSwitch = (Switch)findViewById(R.id.alphabeticSwitch);
         alphabeticRadioGroup = (RadioGroup)findViewById(R.id.alphabeticRadioGroup);
@@ -110,5 +111,11 @@ public class Password_Activity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 }
